@@ -17,7 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contacto', function () {
+Route::get('/contacto/{user_id?}', function ($user_id = null) {
+    
+    if(!empty($user_id)) {
+        $usuario = $usuarios[$user_id];
+    }
+    else {
+        $usuario = null;
+    }
+
     return view('contacto');
 });
 
