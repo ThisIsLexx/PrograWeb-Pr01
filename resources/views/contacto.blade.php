@@ -7,11 +7,8 @@
     <title>Formulario de contacto</title>
     <link rel="stylesheet" type="text/css" href="{{asset('css/form_cont.css')}}" />
 </head>
-<body>
 
-<div class="header shadow">
-    
-</div>
+<body>
 
 <div class="overlay">
     <section class="form_contact">
@@ -33,4 +30,5 @@
 </div>
 
 </body>
+
 </html>

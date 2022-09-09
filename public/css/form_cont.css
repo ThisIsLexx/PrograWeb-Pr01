@@ -6,7 +6,7 @@ body {
     background-color: #f1f1f1;
     background-image: url("/imgs/background.jpg");
     background-repeat: no-repeat;
-    background-size: 1920px 1080px;
+    background-size: cover;
     margin: 0;
 }
 
@@ -84,10 +84,13 @@ input[type="submit"]:hover {
 
 h1 {
     color:#244b00f2;
+    margin: 0;
 }
 
 .header {
     margin: 0;
     background-color: #244b00f2;
     height: 60px;
+    padding: 15px;
+    text-align: center;
 }
