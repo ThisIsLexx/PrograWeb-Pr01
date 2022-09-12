@@ -19,14 +19,27 @@ Route::get('/', function () {
 
 Route::get('/contacto/{user_id?}', function ($user_id = null) {
     
+    $usuarios = [
+        ['admin', 'admin@test.com'],
+        ['Alexis', 'alexis@test.com'],
+        ['Samuel','samuel@test.com'],
+        ['Juan','juan@test.com'],
+    ];
+
     if(!empty($user_id)) {
-        $usuario = $usuarios[$user_id];
+        if($user_id > sizeof($usuarios)-1){
+            $usuario = null;
+            $user_id = null;
+        }
+        else {
+            $usuario = $usuarios[$user_id];
+        }
     }
     else {
         $usuario = null;
     }
 
-    return view('contacto');
+    return view('contacto', compact('usuarios', 'usuario'));
 });
 
 Route::get('/landingpage', function () {

@@ -14,17 +14,23 @@
     <section class="form_contact">
         <h1 class="center">Contactanos!</h1>
         <form class="contacto">
-            <label for="nombre">Nombre:</label>
-            <input type="text" required name="nombre" placeholder="Tu nombre">
+            
+            @if(empty($usuario))
+                {{ $usuario[0] = ""; }}
+                {{ $usuario[1] = ""; }}
+            @endif
 
-            <label for="correo">Correo electronico:</labe>
-            <input type="email" required name="correo" placeholder="Tu correo electronico">
+            <label for="nombre">Nombre:</label>
+            <input type="text" required name="nombre" id="nombre" value= "{{ $usuario[0] }}" placeholder="Tu nombre">
+
+            <label for="correo">Correo electronico:</label>
+            <input type="email" required name="correo"  id="correo" value = "{{ $usuario[1] }}" placeholder="Tu correo electronico">
 
             <label for="comentario">Comentarios</label>
-            <textarea name="comentario" placeholder="Como podemos ayudar?"></textarea>
+            <textarea name="comentario" id="comentario" placeholder="Como podemos ayudar?"></textarea>
             <div class="center">
                 <input class="shadow" required type="submit">
-            </div>
+            </div>            
         </form>
     </section>
 </div>
