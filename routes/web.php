@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SitioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,31 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contacto/{user_id?}', function ($user_id = null) {
-    
-    $usuarios = [
-        ['admin', 'admin@test.com'],
-        ['Alexis', 'alexis@test.com'],
-        ['Samuel','samuel@test.com'],
-        ['Juan','juan@test.com'],
-    ];
+Route::get('/contacto/{user_id?}', [SitioController::class, 'contacto']);
 
-    if(!empty($user_id)) {
-        if($user_id > sizeof($usuarios)-1){
-            $usuario = null;
-            $user_id = null;
-        }
-        else {
-            $usuario = $usuarios[$user_id];
-        }
-    }
-    else {
-        $usuario = null;
-    }
-
-    return view('contacto', compact('usuarios', 'usuario'));
-});
-
-Route::get('/landingpage', function () {
-    return view('landingpage');
-});
+Route::get('/landingpage', [SitioController::class, 'landingpage']);
