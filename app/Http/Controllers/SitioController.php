@@ -28,6 +28,14 @@ class SitioController extends Controller
         return view('contacto', compact('usuarios', 'usuario'));
     }
 
+    public function recibeFormContacto(Request $request) {
+        $request->validate([
+            'nombre' => 'required|max:255|min:3',
+            'correo' => 'required|email',
+            'mensaje' => 'required',
+        ]);
+    }
+
     public function landingpage() {
         return view('landingpage');
     }

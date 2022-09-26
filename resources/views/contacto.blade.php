@@ -13,7 +13,7 @@
 <div class="overlay">
     <section class="form_contact">
         <h1 class="center">Contactanos!</h1>
-        <form class="contacto">
+        <form class="contacto" action="/recibe-form-contacto">
             
             @if(empty($usuario))
                 {{ $usuario[0] = ""; }}
