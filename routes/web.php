@@ -20,4 +20,8 @@ Route::get('/', function () {
 
 Route::get('/contacto/{user_id?}', [SitioController::class, 'contacto']);
 
+Route::post('/recibe-form-contacto', [SitioController::class, 'recibeFormContacto']);
+
 Route::get('/landingpage', [SitioController::class, 'landingpage']);
+
+//Route::get('/landingpage', [SitioController::class, 'landingpage']);

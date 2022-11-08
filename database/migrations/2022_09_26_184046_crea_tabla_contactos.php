@@ -17,7 +17,7 @@ class CreaTablaContactos extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('correo');
-            $table->text('mensaje');
+            $table->text('comentario');
             $table->timestamps();
         });
     }
