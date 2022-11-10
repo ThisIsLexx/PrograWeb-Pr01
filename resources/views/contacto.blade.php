@@ -18,13 +18,13 @@
             @csrf
 
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" value= "{{ $nombre? $nombre : old('nombre') }}" placeholder="Tu nombre">
+            <input type="text" required name="nombre" id="nombre" value= "{{ $nombre? $nombre : old('nombre') }}" placeholder="Tu nombre">
             @error('nombre')
                 <p>Porfavor ingrese un nombre!</p>
             @enderror
 
             <label for="correo">Correo electronico:</label>
-            <input type="email" name="correo"  id="correo" value = "{{ $correo? $correo : old('correo') }}" placeholder="Tu correo electronico">
+            <input type="email" required name="correo"  id="correo" value = "{{ $correo? $correo : old('correo') }}" placeholder="Tu correo electronico">
             @error('correo')
                 <p>Ingrese una dirección de correo valida!</p>
             @enderror
