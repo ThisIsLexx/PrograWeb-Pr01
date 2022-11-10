@@ -16,19 +16,15 @@
         <form class="contacto" action="/recibe-form-contacto" method="POST">
             
             @csrf
-            @if(empty($usuario))
-                {{ $usuario[0] = ""; }}
-                {{ $usuario[1] = ""; }}
-            @endif
 
             <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" value= "{{ $usuario[0]? $usuario[0] : old('nombre') }}" placeholder="Tu nombre">
+            <input type="text" name="nombre" id="nombre" value= "{{ $nombre? $nombre : old('nombre') }}" placeholder="Tu nombre">
             @error('nombre')
                 <p>Porfavor ingrese un nombre!</p>
             @enderror
 
             <label for="correo">Correo electronico:</label>
-            <input type="email" name="correo"  id="correo" value = "{{ $usuario[1]? $usuario[1] : old('correo') }}" placeholder="Tu correo electronico">
+            <input type="email" name="correo"  id="correo" value = "{{ $correo? $correo : old('correo') }}" placeholder="Tu correo electronico">
             @error('correo')
                 <p>Ingrese una dirección de correo valida!</p>
             @enderror
@@ -36,7 +32,7 @@
             <label for="comentario">Comentarios</label>
             <textarea name="comentario" id="comentario" placeholder="Como podemos ayudar?"></textarea>
             @error('comentario')
-                <p>Porfavor escriba un comentario</p>
+                <p>Porfavor escriba un comentario...</p>
             @enderror
 
             <div class="center">

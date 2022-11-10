@@ -8,25 +8,17 @@ use Illuminate\Support\Facades\DB;
 class SitioController extends Controller
 {
     public function contacto($user_id = null) {
-        $usuarios = [
-            ['admin', 'admin@test.com'],
-            ['Alexis', 'alexis@test.com'],
-            ['Samuel','samuel@test.com'],
-            ['Juan','juan@test.com'],
-        ];
-        if(!empty($user_id)) {
-            if($user_id > sizeof($usuarios)-1){
-                $usuario = null;
-                $user_id = null;
-            }
-            else {
-                $usuario = $usuarios[$user_id];
-            }
+    
+        if($user_id=='1234') {
+            $nombre = 'Alexis';
+            $correo = 'alexis@test.com';
         }
-        else {
-            $usuario = null;
+        else{
+            $nombre = null;
+            $correo = null;
         }
-        return view('contacto', compact('usuarios', 'usuario'));
+
+        return view('contacto', compact('nombre', 'correo'));
     }
 
     public function recibeFormContacto(Request $request) {
