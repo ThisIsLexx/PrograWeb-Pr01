@@ -1,486 +1,195 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
 
-  <title>Landing Page - Proyecto01</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+            100% {
+                transform: translateX(-100%);
+            }
+        }
 
-  <!-- Favicons -->
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon"/>
-  <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon"/>
+        .animate-scroll {
+            animation: scroll 20s linear infinite;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>  
-  <link href="{{asset('assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet"/>
-  <link href="{{asset('assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet"/>
-  <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet"/>
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
 
-  <!-- Template Main CSS File -->   
-  <link  type="text/css" href="{{asset('assets/css/style.css')}}" rel="stylesheet"/>
-  <!-- =======================================================
-  * Template Name: DevFolio - v4.8.1
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        #changing-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        .typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .10em solid white;
+            animation: typewriter 3s steps(30, end) 1 normal both;
+        }
+    </style>
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <h1 class="logo"><a href="/landingpage">Portafolio Personal</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sobre mi</a></li>
-          <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
-          <li><a class="nav-link scrollto " href="#work">Trabajo</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+    <div class="flex space-x-2 justify-end p-5 relative">
+        <a href="#about-me" class="text-indigo-700 hover:text-indigo-700/80">Sobre mi</a>
+        <a href="#portafolio" class="text-indigo-700 hover:text-indigo-700/80">Mis proyectos</a>
     </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/hero-bg.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">Yo soy Alexis Guzmán</h1>
-          <p class="hero-subtitle"><span class="typed" data-typed-items="Estudiante, Developer, Fotografo"></span></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+    {{-- INICIO: Header --}}
+    <section
+        class="flex justify-center items-center p-10 w-full bg-gradient-to-r from-blue-800 via-purple-800 to-pink-800">
+        <div class="text-center">
+            <h1 class="text-white font-bold text-5xl mb-4">Hola! Soy Alexis Guzmán,</h1>
+            <h2 id="changing-text"
+                class="text-white text-3xl overflow-hidden border-r-4 border-white whitespace-nowrap"></h2>
         </div>
-      </div>
-    </div>
-  </div><!-- End Hero Section -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="assets/img/testimonial-2.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Nombre: </span> <span>Alexis Guzmán</span></p>
-                        <p><span class="title-s">Perfil: </span> <span>Estudiante de Informática</span></p>
-                        <p><span class="title-s">Correo: </span> <span>thisislexxb@gmail.com</span></p>
-                        <p><span class="title-s">Telefono: </span> <span>+52 3312861625</span></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skill</p>
-                    <span>HTML</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>CSS3</span> <span class="pull-right">40%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>PHP</span> <span class="pull-right">40%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>JAVASCRIPT</span> <span class="pull-right">30%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        Sobre mi
-                      </h5>
-                    </div>
-                    <p class="lead">
-                      Soy un estudiante de ingeniería informática que disfruta mucho del desarrollo web y el diseño responsivo,
-                      a pesar de no tener muchos conocimientos, siempre estoy dispuesto a aprender más sobre los temas que me parecen
-                      interesantes.
-                    </p>
-                    <p class="lead">
-                      También soy productor músical como hobbie, es una actividad que me parece bastante entretenida y en la que,
-                      también puedo expresar mis sentimientos a la gente a través de la música.
-                    </p>
-                    <p class="lead">
-                      La fotografía es otra de mis cualidades, al igual que producción musical, actualmente lo hago como un pasatiempo,
-                      aunque me parece una forma increible de poder conocer personas, y de conectar con ellas.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    </section>
+    {{-- FIN: Header --}}
+    {{-- INICIO: Sección sobre mi --}}
+    <section class="flex bg-gray-300 p-10 w-full">
+        <div class="basis-1/3 flex flex-col items-center text-center">
+            <span class="text-2xl uppercase font-semibold text-gray-800 mb-4">Sobre mí</span>
+            <img src="https://via.placeholder.com/150" alt="Foto de perfil"
+                class="rounded-full border-4 border-white shadow-lg mb-4">
         </div>
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Servicios
-              </h3>
-              <p class="subtitle-a">
-                Estos son algunos de los servicios que puedo ofrecer:
-              </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
+        <div class="basis-2/3 text-justify text-lg text-gray-700">
+            <p>Hola! Mi nombre es <span class="font-bold">Alexis Omar Guzmán Castillo</span>, soy un estudiante de la
+                Universidad de Guadalajara que se encuentra estudiando la carrera de Ingeniería Informática.
+                Me apasiona el desarrollo web y la programación en general, me gusta aprender cosas nuevas y estar en
+                constante crecimiento.
+                Actualmente me encuentro aprendiendo sobre el desarrollo de aplicaciones web utilizando diferentes
+                tecnologías como lo son
+                <span class="font-semibold italic">Laravel</span>,
+                <span class="font-semibold italic">Vue.js</span>,
+                <span class="font-semibold italic">TailwindCSS</span>,
+                <span class="font-semibold italic">Livewire</span>, etc.
+            </p>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-briefcase"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Diseño web</h2>
-                <p class="s-description text-center">
-                  Diseños básicos para paginas web, esto como una manera de practicar y desarrollar mejores habilidades.
-                </p>
-              </div>
+    </section>
+    {{-- FIN: Sección sobre mi --}}
+    {{-- INICIO: Sección portafolio --}}
+    <section class="flex flex-col bg-gray-700 p-10 w-full">
+        <span class="text-4xl text-white font-semibold text-center mb-10">Proyectos en los que<br>he trabajado</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+                class="p-5 rounded-md bg-gray-100 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-2">Credenciales FEU</h3>
+                <p class="text-gray-700">Sistema desarrollado con Vue.js y php, para credencializar información de
+                    miembros de la federación estudiantil universitaria</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-card-checklist"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Desarrollo web</h2>
-                <p class="s-description text-center">
-                  Después del diseño, la implemetanción de codigo para el correcto funcionamiento de las paginas web es esencial,
-                  esto también sirve como practica.
-                </p>
-              </div>
+            <div
+                class="p-5 rounded-md bg-gray-100 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-2">Proyecto 2</h3>
+                <p class="text-gray-700">Descripción breve del proyecto.</p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-bar-chart"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Fotografía</h2>
-                <p class="s-description text-center">
-                  Todo tipo de fotografía, desde retrato, hasta imagen para productos, puedo prestar mis servicios para ofrecer una
-                  calidad de imagen excepcional para tus paginas web.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="bi bi-binoculars"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Diseño responsivo</h2>
-                <p class="s-description text-center">
-                  A quien no le gusta cuando una página web se mira bien desde cualquier dispositivo?
-                </p>
-              </div>
+            <div
+                class="p-5 rounded-md bg-gray-100 hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                <h3 class="text-xl font-semibold mb-2">Proyecto 3</h3>
+                <p class="text-gray-700">Descripción breve del proyecto.</p>
             </div>
         </div>
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container position-relative">
-        <div class="row">
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-check"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">TRABAJOS COMPLETADOS</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">AÑOS DE EXPERIENCIA</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-people"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">CLIENTES TOTALES</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-award"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">RECONOCIMIENTOS</span>
-              </div>
-            </div>
-          </div>
+    </section>
+    {{-- FIN: Sección portafolio --}}
+    {{-- INICIO: Sección tecnologías --}}
+    <section class="bg-gray-300 p-10 w-full">
+        <div class="flex justify-center mb-10">
+            <span class="text-4xl uppercase font-semibold text-gray-800">Tecnologías</span>
         </div>
-      </div>
-    </div><!-- End Counter Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Portfolio
-              </h3>
-              <p class="subtitle-a">
-                Alguno de los trabajos que he realizado
-              </p>
-              <div class="line-mf"></div>
+        <div class="overflow-hidden relative w-full max-w-4xl mx-auto">
+            <div id="carousel" class="flex space-x-6 animate-scroll">
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="MySQL" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">MySQL</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="SQL" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">SQL</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="Laravel" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">Laravel</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="TailwindCSS" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">TailwindCSS</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="Livewire" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">Livewire</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="Vue.js" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">Vue.js</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="PHP" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">PHP</span>
+                </div>
+                <div class="flex flex-col items-center min-w-[100px]">
+                    <img src="https://via.placeholder.com/50" alt="XML" class="mb-2">
+                    <span class="text-lg font-semibold text-gray-700">XML</span>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-1.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Dory</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Android App</span> / <span class="w-date">2022</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://github.com/MarianaL19/Dory.git"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-2.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">SICOJA</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">2022</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://github.com/Oliverso2K/SICOJA.git"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-3.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Youtube Channel</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Music portafolio</span> / <span class="w-date">2017</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://www.youtube.com/channel/UCluadl8ecr2gHnHYPabCi1w"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        Envianos un mensaje!
-                      </h5>
-                    </div>
-                    <div>
-                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" name="name" class="form-control" id="name" placeholder="Tu nombre" required>
-                            </div>
-                          </div>
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="email" class="form-control" name="email" id="email" placeholder="Tu correo" required>
-                            </div>
-                          </div>
-                          <div class="col-md-12 mb-3">
-                            <div class="form-group">
-                              <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
-                            </div>
-                          </div>
-                          <div class="col-md-12 text-center my-3">
-                            <div class="loading">Cargando</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Tu mensaje ha sido enviado. Gracias!</div>
-                          </div>
-                          <div class="col-md-12 text-center">
-                            <button type="submit" class="button button-a button-big button-rouded">Enviar mensaje</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        En que puedo ayudarte?
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                        En el mensaje especifica cualquiera de los servicios que te gustaría obtener, desde fotografía,
-                        hasta producción musical o desarrollo web.
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="bi bi-geo-alt"></span> Guadalajara, Jal. México</li>
-                        <li><span class="bi bi-phone"></span> +52 3312861625</li>
-                        <li><span class="bi bi-envelope"></span> thisislexxb@gmail.com</li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
-            <div class="credits">
-              <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-            -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{{asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
-  <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/typed.js/typed.min.js')}}"></script>
-  <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{{asset('assets/js/main.js')}}"></script>
-
+    </section>
+    {{-- FIN: Sección tecnologías --}}
 </body>
 
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const carousel = document.getElementById('carousel');
+        const items = carousel.children;
+        let index = 0;
+
+        function showNextItem() {
+            index = (index + 1) % items.length;
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        setInterval(showNextItem, 2000); // Cambiar cada 3 segundos
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+        const texts = ["Desarrollador web...", "Ingeniero en Software...", "Entusiasta de la Tecnología...",
+            "Aprendiz de por Vida..."
+        ];
+        let index = 0;
+        const element = document.getElementById('changing-text');
+
+        function updateText() {
+            element.classList.remove('typewriter-text');
+            void element.offsetWidth; // Trigger reflow to restart animation
+            element.textContent = texts[index];
+            element.classList.add('typewriter-text');
+            index = (index + 1) % texts.length;
+        }
+
+        updateText(); // Initialize with the first text
+        setInterval(updateText, 4000); // Change text every 4 seconds
+    });
+</script>
